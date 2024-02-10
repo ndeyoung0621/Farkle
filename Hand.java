@@ -1,6 +1,7 @@
 
 package main.java.edu.gonzaga.Farkle;
 import edu.gonzaga.Farkle.Die;
+
 public class Hand {
 
 public String handToString(Die currentHand[]){

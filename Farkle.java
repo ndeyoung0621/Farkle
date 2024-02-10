@@ -1,7 +1,7 @@
 
 package edu.gonzaga.Farkle;
 import main.java.edu.gonzaga.Farkle.Hand;
-import main.java.edu.gonzaga.Farkle.PrintMenu;
+import main.java.edu.gonzaga.Farkle.Game;
 
 /*
 *  This is the main class for the Farkle project.
@@ -14,12 +14,10 @@ public class Farkle {
     // This main is where your Farkle game starts execution for general use.
     public static void main(String[] args) {
 
-        PrintMenu printMenu = new PrintMenu();
         Hand hand = new Hand();
         Die[] gameHand = new Die[6];
-        printMenu.printMenu(hand.handToString(gameHand)); 
-
-        
+        Game game = new Game();
+        game.run();
 
     }
 }

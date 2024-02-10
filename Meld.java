@@ -20,10 +20,11 @@ Scanner scanner = new Scanner(System.in);
 */
 
 //Constructer method with default open value
-public int[] defaultMeld(){
+    public int[] defaultMeld(){
 
-    this.meld = DEFAULT_MELD;
-    return DEFAULT_MELD;
-}
+        this.meld = DEFAULT_MELD;
+        return DEFAULT_MELD;
+        
+    }
 
 }
