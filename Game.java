@@ -10,10 +10,16 @@ public class Game {
     public void setFarkle() {
         this.farkle = false;
     }
-    
+
     public void run() {
         while (gameRunning) {
             
+            Hand hand = new Hand();
+            Die[] playingHand = hand.makeHand();
+            System.out.println(hand.toString(playingHand));
+
+            farkle = true;
+
             if (farkle == true) {
                 gameRunning = false;
             }

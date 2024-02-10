@@ -14,8 +14,6 @@ public class Farkle {
     // This main is where your Farkle game starts execution for general use.
     public static void main(String[] args) {
 
-        Hand hand = new Hand();
-        Die[] gameHand = new Die[6];
         Game game = new Game();
         game.run();
 

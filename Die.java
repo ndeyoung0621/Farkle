@@ -18,12 +18,10 @@ public class Die implements Comparable<Die> {
     private static final Integer DEFAULT_SIDE_UP = 1;
 
     public Die() {
-        //this.numSides = DEFAULT_NUM_SIDES;
         this.sideUp = DEFAULT_SIDE_UP;
     }
 
     public Die(Integer startingSide) {
-        //this.numSides = numSides;
         this.sideUp = startingSide;
     }
 

@@ -4,17 +4,24 @@ import edu.gonzaga.Farkle.Die;
 
 public class Hand {
 
-public String handToString(Die currentHand[]){
-    
-    String ret = "Current Hand: ";
+public Die[] makeHand(){
 
+    Die[] currentHand = new Die[6];
     for(int i = 0; i < 6; i++){
         currentHand[i] = new Die();
         currentHand[i].roll();
-        ret += currentHand[i] + " ";
     }
 
-    return ret;
+return currentHand;
+
+}
+
+public String toString(Die[] handToPrint) {
+    String ret = "current hand = ";
+    for(int i = 0; i < 6; i++){
+    ret += handToPrint[i];
+    }
+return ret;
 }
 
 }
