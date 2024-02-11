@@ -14,11 +14,13 @@ public class Game {
     }
 
     public void run() {
+        
             Hand hand = new Hand();
-            hand.makeHand();
+            hand.sortHand();
             System.out.println(hand.toString(hand.getHand()) + "\n");
             Meld meld = new Meld();
             meld.set_default_meld();
+
         while (gameRunning) {
             
             String playerInput = scanner.nextLine();

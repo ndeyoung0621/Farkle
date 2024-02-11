@@ -36,7 +36,13 @@ Scanner scanner = new Scanner(System.in);
     public void setMeld(String playerInput, Die[] hand){
 
         Die tempDie = new Die(0);
-            switch(playerInput) {
+
+        for(int i = 0; i < playerInput.length(); i++) {
+            
+            Character currentChar = playerInput.charAt(i);
+            String selection = Character.toString(currentChar);
+
+            switch(selection) {
                 case ("A"):
                     tempDie = this.meld[0];
                     this.meld[0] = hand[0];
@@ -72,7 +78,10 @@ Scanner scanner = new Scanner(System.in);
                     System.out.println("Error: invalid player input detected");
                 break;
             }
+
         }
+
+    }
 
     public String toString() {
         String ret = "current meld = ";

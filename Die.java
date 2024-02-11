@@ -9,7 +9,7 @@ package edu.gonzaga.Farkle;
 import java.util.Random;
 
 /** Class to store the state of a single die. */
-public class Die implements Comparable<Die> {
+public class Die {
 
    
     //private Integer numSides; // Sides on the die (should be 1...INF integer)
