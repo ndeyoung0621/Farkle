@@ -77,6 +77,21 @@ Scanner scanner = new Scanner(System.in);
                     this.meld[5] = hand[5];
                     hand[5] = tempDie;
                 break;
+
+                case("Q"):
+                for(int j = 0; j < 20; j++){
+                    System.out.println("");
+                    if(j == 9){
+                        System.out.println("THANK YOU FOR PLAYING !");
+                    }
+                }
+                
+                System.exit(0);
+                break;
+
+                case("K"):
+                //scoreCare.scoreMeld();
+                break;
         
                 default:
                     System.out.println("Error: invalid player input detected");
