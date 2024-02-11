@@ -24,6 +24,22 @@ public void sortHand(){
     Arrays.sort(this.currentHand, (die1, die2) -> Integer.compare(die1.getSideUp(), die2.getSideUp()));
 }
 
+public int[] countDie(){
+
+int[] countNumberOfDie = new int[7];
+
+for (int i = 0; i < 7; i++){
+    countNumberOfDie[i] = 0;
+}
+
+for (int i = 0; i < 6; i++){
+    countNumberOfDie[this.currentHand[i].getSideUp()]++;
+}
+
+return countNumberOfDie;
+}
+
+
 public String toString(Die[] handToPrint) {
     String ret = "current hand = ";
     for(int i = 0; i < 6; i++){

@@ -14,21 +14,24 @@ public class Game {
     }
 
     public void run() {
-        
+
             Hand hand = new Hand();
             hand.sortHand();
-            System.out.println(hand.toString(hand.getHand()) + "\n");
             Meld meld = new Meld();
             meld.set_default_meld();
+            int[] countDie = hand.countDie();
+            printScreen screen = new printScreen();
 
         while (gameRunning) {
             
+            screen.go(meld.getMeld(), hand.getHand(), countDie);
+            
             String playerInput = scanner.nextLine();
             playerInput = stringClean(playerInput);
-            System.out.println(playerInput);
+            //System.out.println(playerInput);
+            
             meld.setMeld(playerInput, hand.getHand());
-            System.out.println(meld.toString());
-            farkle = true;
+            //farkle = true;
 
             if (farkle == true) {
                 gameRunning = false;

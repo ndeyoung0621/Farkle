@@ -33,6 +33,10 @@ Scanner scanner = new Scanner(System.in);
         this.meld = DEFAULT_MELD;
     }
 
+    public Die[] getMeld(){
+        return this.meld;
+    }
+
     public void setMeld(String playerInput, Die[] hand){
 
         Die tempDie = new Die(0);
