@@ -10,14 +10,14 @@ public class Meld {
 /*A variable to store the current meld, and the current hand side by side
 * the variable should switch the positions of the values left to right as the input is given
 */
-private Die[][] meld;
-private Die[][] DEFAULT_MELD = new Die[6][2]; 
+private Die[] meld;
+private Die[] DEFAULT_MELD = new Die[6]; 
 
 public void set_default_meld(){
-    for(int i = 0; i < 2; i++){
-        for(int j = 0; j < 6; j++){
-            DEFAULT_MELD[i][j] = new Die(0);
-        }
+    for(int i = 0; i < 6; i++){
+
+            DEFAULT_MELD[i] = new Die(0);
+        
     }
 }
 
@@ -38,29 +38,34 @@ Scanner scanner = new Scanner(System.in);
         Die tempDie = new Die(0);
             switch(playerInput) {
                 case ("A"):
-                    tempDie = this.meld[1][1];
-                    this.meld[1][1] = hand[1];
-                    hand[1] = tempDie;
+                    tempDie = this.meld[0];
+                    this.meld[0] = hand[0];
+                    hand[0] = tempDie;
                 break;
                 case("B"):
-                    this.meld[1][2] = hand[2];
-                    hand[2] = 0;
+                    tempDie = this.meld[1];
+                    this.meld[1] = hand[1];
+                    hand[1] = tempDie;
                 break;
                 case("C"):
-                    this.meld[1][3] = hand[3];
-                    hand[3] = 0;
+                    tempDie = this.meld[2];
+                    this.meld[2] = hand[2];
+                    hand[2] = tempDie;
                 break;
                 case("D"):
-                    this.meld[1][4] = hand[4];
-                    hand[4] = 0;
+                    tempDie = this.meld[3];
+                    this.meld[3] = hand[3];
+                    hand[3] = tempDie;
                 break;
                 case("E"):
-                    this.meld[1][5] = hand[5];
-                    hand[5] = 0;
+                    tempDie = this.meld[4];
+                    this.meld[4] = hand[4];
+                    hand[4] = tempDie;
                 break;
                 case("F"):
-                    this.meld[1][6] = hand[6];
-                    hand[6] = 0;
+                    tempDie = this.meld[5];
+                    this.meld[5] = hand[5];
+                    hand[5] = tempDie;
                 break;
         
                 default:
@@ -71,15 +76,14 @@ Scanner scanner = new Scanner(System.in);
 
     public String toString() {
         String ret = "current meld = ";
-        for(int i = 0; i < 2; i++){
-            for(int j = 0; j < 6; j++) {
-                //ret += handToPrint[i] + " ";
-                ret += this.meld[i][j];
-            }
-            ret += "\n" + "               ";
-            
+        for(int i = 0; i < 6; i++){
+            ret += this.meld[i];
         }
+
+        ret += "\n" + "               ";
+            
     return ret;
+    
     }
 
 }
