@@ -5,13 +5,11 @@ import java.util.Scanner;
 
 public class Game {
 
-    private boolean gameRunning = true;
+    public static boolean gameRunning = true;
+    public static int totalScorePlayer1 = 0;
     private boolean farkle = false;
     Scanner scanner = new Scanner(System.in);
 
-    public void setFarkle() {
-        this.farkle = false;
-    }
 
     public void run() {
 
@@ -20,22 +18,22 @@ public class Game {
             Meld meld = new Meld();
             meld.set_default_meld();
             int[] countDie = hand.countDie();
+            scoreCard scoreCard = new scoreCard();
+            boolean isFarkle = hand.farkleChecker();
 
         while (gameRunning) {
             
-            printScreen(meld.getMeld(), hand.getHand(), countDie);
+            printScreen(meld.getMeld(), hand.getHand(), countDie, scoreCard.getScore(), isFarkle);
             
             String playerInput = scanner.nextLine();
             playerInput = stringClean(playerInput);
-            //System.out.println(playerInput);
 
             meld.setMeld(playerInput, hand.getHand());
-            //farkle = true;
 
-            if (farkle == true) {
-                gameRunning = false;
-            }
+            scoreCard.setScore(meld.getMeld());
+
         }
+        System.exit(0);
     }
 
     public String stringClean(String string){
@@ -51,7 +49,7 @@ public class Game {
     }
 
 
-public void printScreen(Die[] meld, Die[] hand, int[] countNumberOfDie){
+public void printScreen(Die[] meld, Die[] hand, int[] countNumberOfDie, int currentScore, boolean isFarkle){
 
     for(int i = 0; i < 5; i++){
         System.out.println("");
@@ -88,10 +86,19 @@ public void printScreen(Die[] meld, Die[] hand, int[] countNumberOfDie){
     }
 
     System.out.println("");
-    System.out.println(" (K) BanK Meld & End Round");
+    System.out.println(" (K) Bank Meld & End Round");
+    System.out.println("");
     System.out.println(" (Q) Quit game");
-    System.out.println("Enter letter choices: ");
+    System.out.println("");
+    if(isFarkle) {
+        System.out.println("FARKLE! Game Over!");
+        Game.gameRunning = false;
+    } else {
+    System.out.println("Current Score: " + currentScore);
     System.out.println("-------------+-------------");
+    System.out.println("Enter letter choices: ");
+    }
+    
 
 }
 

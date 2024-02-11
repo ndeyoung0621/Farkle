@@ -39,6 +39,29 @@ for (int i = 0; i < 6; i++){
 return countNumberOfDie;
 }
 
+public boolean farkleChecker(){
+    boolean isFarkle = true;
+    int pairCount = 0;
+    int[] numDie = countDie();
+    if(numDie[1] != 0 || numDie[5] != 0) {
+        isFarkle = false;
+    }
+    for( int i = 2; i < 7; i++ ) {
+        if(numDie[i] >= 3) {
+            isFarkle = false;
+        }
+    }
+    for( int i = 1; i < 7; i++ ) {
+        if(numDie[i] == 2) {
+            pairCount++;
+        }
+    }
+    if( pairCount == 3 ) {
+        isFarkle = false;
+    }
+    return isFarkle;
+}
+
 
 public String toString(Die[] handToPrint) {
     String ret = "current hand = ";

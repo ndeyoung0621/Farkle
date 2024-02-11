@@ -1,6 +1,7 @@
 
 package main.java.edu.gonzaga.Farkle;
 import edu.gonzaga.Farkle.Die;
+import edu.gonzaga.Farkle.scoreCard;
 import java.util.Scanner;
 
 public class Meld {
@@ -85,12 +86,14 @@ Scanner scanner = new Scanner(System.in);
                         System.out.println("THANK YOU FOR PLAYING !");
                     }
                 }
-                
-                System.exit(0);
+
+                Game.gameRunning = false;
+
                 break;
 
                 case("K"):
-                //scoreCare.scoreMeld();
+                    System.out.println("ROUND OVER, TOTAL SCORE IS NOW: " + Game.totalScorePlayer1);
+                    Game.gameRunning = false;
                 break;
         
                 default:
