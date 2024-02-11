@@ -4,22 +4,51 @@ import edu.gonzaga.Farkle.Die;
 
 public class Hand {
 
-public Die[] makeHand(){
+private Die[] defaultHand = new Die[6];
+private Die[] currentHand;
 
-    Die[] currentHand = new Die[6];
+public Hand() {
+    this.currentHand = defaultHand;
+}
+
+public void makeHand(){
+
     for(int i = 0; i < 6; i++){
-        currentHand[i] = new Die();
-        currentHand[i].roll();
+        this.currentHand[i] = new Die();
+        this.currentHand[i].roll();
     }
 
-return currentHand;
-
 }
+
+public Die[] getHand() {
+    return this.currentHand;
+}
+
+public void handAdjust(Die[] handToAdjust, String playerInput) {
+
+    switch(playerInput) {
+        case ("A"):
+            handToAdjust[1] = 0;
+        break;
+        case("B"):
+        break;
+        case("C"):
+        break;
+        case("D"):
+        break;
+        case("E"):
+        break;
+        case("F"):
+        break;
+
+    }
+}
+
 
 public String toString(Die[] handToPrint) {
     String ret = "current hand = ";
     for(int i = 0; i < 6; i++){
-    ret += handToPrint[i];
+    ret += handToPrint[i] + " ";
     }
 return ret;
 }

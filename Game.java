@@ -15,8 +15,8 @@ public class Game {
         while (gameRunning) {
             
             Hand hand = new Hand();
-            Die[] playingHand = hand.makeHand();
-            System.out.println(hand.toString(playingHand));
+            hand.makeHand();
+            System.out.println(hand.toString(hand.getHand()));
 
             farkle = true;
 
