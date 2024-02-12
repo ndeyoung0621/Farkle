@@ -11,9 +11,6 @@ import java.util.Random;
 /** Class to store the state of a single die. */
 public class Die {
 
-   
-    //private Integer numSides; // Sides on the die (should be 1...INF integer)
-    //private static final Integer DEFAULT_NUM_SIDES = 6;
     private Integer sideUp; // Current die 'value' in range 1..numSides
     private static final Integer DEFAULT_SIDE_UP = 1;
 
