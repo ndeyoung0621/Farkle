@@ -14,6 +14,14 @@ public Hand() {
         this.currentHand[i] = new Die();
         this.currentHand[i].roll();
     }
+    this.currentHand[0].setSideUp(2);
+    this.currentHand[1].setSideUp(2);
+    this.currentHand[2].setSideUp(3);
+    this.currentHand[3].setSideUp(3);
+    this.currentHand[4].setSideUp(4);
+    this.currentHand[5].setSideUp(6);
+
+    
 }
 
 public Die[] getHand() {

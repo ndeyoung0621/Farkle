@@ -33,8 +33,8 @@ public class scoreCard {
     public boolean isStraight(int[] countDie) {
         boolean isStraight = true;
 
-            for(int numDie : countDie) {
-                if (numDie != 1) {
+            for(int i = 1; i < 7; i++) {
+                if (countDie[i] != 1) {
                     isStraight = false;
                 }
             }
@@ -70,8 +70,6 @@ public class scoreCard {
                         tripleSetPoints = 1000;
                     } else {
                         tripleSetPoints = i * 100;
-                    }
-                    if( countDie[i] > 3 ) {
                         tripleSetPoints += (countDie[i] - 3) * 100 * i;
                     }
                         

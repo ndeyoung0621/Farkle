@@ -33,6 +33,7 @@ public class Game {
             scoreCard.setScore(meld.getMeld());
 
         }
+        scanner.close();
         System.exit(0);
     }
 

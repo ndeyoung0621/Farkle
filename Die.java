@@ -25,7 +25,9 @@ public class Die {
         this.sideUp = startingSide;
     }
 
-
+    public void setSideUp(int value){
+        this.sideUp = value;
+    }
     /** Rolls the die once, getting new random value. */
     public void roll() {
         Random rand = new Random();
